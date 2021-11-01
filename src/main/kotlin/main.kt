@@ -8,7 +8,7 @@ const val discountMaestro = 0.04
 const val discountVkPay = 0
 
 //Функция расчета комиссии transferFounds
-fun transferFounds(): Triple <Any, Any, Any> {
+fun transferFounds(): Triple<Any, Any, Any> {
     println("Какой картой (платежной системой) будем платить? выберите по номеру из списка:")
     println("1. Visa")
     println("2. МИР")
@@ -24,12 +24,12 @@ fun transferFounds(): Triple <Any, Any, Any> {
         3 -> amount - (amount * discountMastercard - 20.00)
         4 -> amount - (amount * discountMaestro - 20.00)
         5 -> amount - amount * discountVkPay
-        else -> println("Ошибка... не корректный ввод")
+        else -> error("Ошибка... не корректный ввод")
     }
     val finalPriceAtDouble = finalPrice as Double
     val amountOfTransaction = (finalPriceAtDouble * 100.0).roundToInt() / 100.0
     println("Вы успешно перевели: $amountOfTransaction рублей")
-    return Triple(amount, finalPriceAtDouble,amountOfTransaction )
+    return Triple(amount, finalPriceAtDouble, amountOfTransaction)
 }
 
 fun main() {
