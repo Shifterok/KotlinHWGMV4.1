@@ -4,18 +4,14 @@ import org.junit.Test
 class MainKtTest {
 
     @Test
-    fun transferFounds(whatPaySystem: Any, amo: Any, finalAmount: Any {
-        val amountOfTransaction = 15000
-        val amountBeforeDiscInDouble = 15_000.00
-        val finalAmount = 14_660.0
+    fun transferFounds_ifDiscountWork() {
+        val amountOfTransaction = 15_000.00
+        val paySystem = 2
 
         val resoult = transferFounds(
-            
             amount = amountOfTransaction,
-            finalPriceAtDouble = amountBeforeDiscInDouble,
-            amountOfTransaction = finalAmount
-
+            whatPaySystem = paySystem,
         )
-        assertEquals(15_000.00, resoult)
+        assertEquals(14_660.0, resoult,0.01)
     }
 }
