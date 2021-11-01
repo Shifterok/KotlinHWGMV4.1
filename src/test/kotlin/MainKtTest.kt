@@ -11,7 +11,7 @@ class MainKtTest {
             amount = amountOfTransaction,
             whatPaySystem = paySystem,
         )
-        assertEquals(14_660.01, resoult, 0.1)
+        assertEquals(14_660.00, resoult, 0.1)
     }
     @Test
     fun transferFounds_correctRoundToPenny() {
@@ -22,6 +22,6 @@ class MainKtTest {
             amount = amountOfTransaction,
             whatPaySystem = paySystem,
         )
-        assertEquals(14_660.01, resoult, 0.01)
+        assertEquals(14_660.00, resoult, 0.01)
     }
 }
